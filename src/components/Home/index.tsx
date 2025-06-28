@@ -1,6 +1,8 @@
+import { SectionContainer } from "./styles";
+
 export function Home(){
   return(
-    <section>
+    <SectionContainer>
       <aside>
         <h1>Hi, my name is Hugo</h1>
         <h2>Web Developer</h2>
@@ -11,25 +13,25 @@ export function Home(){
 
       <div>
         <div>
-          <h1>ABOUT ME</h1>
+          <h3>ABOUT ME</h3>
           <p>Brasileiro, 27 anos</p>
           <p>Sou graduando em Analise e Desenvolvimmento de Sistemas</p>
           <p>Front-End Developer</p>
           <p>Inglês Intermediário : Leitura e Conversas Objetivas</p>
         </div>
         <div>
-          <h1>MY STAKS</h1>
+          <h3>MY STAKS</h3>
           <p>React</p>
           <p>Typescript</p>
           <p>JS</p>
           <p>HTML + CSS</p>
         </div>
         <div>
-          <h1>LINKS</h1>
+          <h3>LINKS</h3>
           <a href="">Linked In </a>
           <a href=""> Github </a>
         </div>
       </div>
-    </section>
+    </SectionContainer>
   );
 }
