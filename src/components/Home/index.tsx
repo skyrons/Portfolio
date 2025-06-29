@@ -1,17 +1,20 @@
-import { SectionContainer } from "./styles";
+import { Aside, Main, SectionContainer } from "./styles";
 
 export function Home(){
   return(
     <SectionContainer>
-      <aside>
+      <Aside>
         <h1>Hi, my name is Hugo</h1>
         <h2>Web Developer</h2>
-        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
-          Delectus quaerat odit in quam fugiat earum! Neque consequuntur eligendi repudiandae quasi. 
-          Vero, omnis.</p>
-      </aside>
+        <div>
+          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
+            Delectus quaerat odit in quam fugiat earum! Neque consequuntur eligendi repudiandae quasi. 
+            Vero, omnis.
+          </p>
+        </div> 
+      </Aside>
 
-      <div>
+      <Main>
         <div>
           <h3>ABOUT ME</h3>
           <p>Brasileiro, 27 anos</p>
@@ -31,7 +34,7 @@ export function Home(){
           <a href="">Linked In </a>
           <a href=""> Github </a>
         </div>
-      </div>
+      </Main>
     </SectionContainer>
   );
 }

@@ -1,4 +1,4 @@
-import { Cards } from "./components/Cards";
+// import { Cards } from "./components/Cards";
 import { Home } from "./components/Home"; 
 
 import { ThemeProvider } from "styled-components";
@@ -12,7 +12,7 @@ export default function App() {
       <ThemeProvider theme={defaultTheme}>
         <GlobalStyle />
         <Home />
-        <Cards />
+        {/* <Cards /> */}
       </ThemeProvider>
     </div>
   );
