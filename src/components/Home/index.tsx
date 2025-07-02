@@ -1,36 +1,38 @@
 import { GithubLogo, LinkedinLogo } from "phosphor-react";
 import { Aside, Main, SectionContainer } from "./styles";
-
 export function Home(){
   return(
     <SectionContainer>
       <Aside>
-        <h1>Hi, my name is Hugo</h1>
+        <h1>Olá, meu nome é Hugo</h1>
         <h1>Web Developer</h1>
         <div>
           <p>
-            Full stack developer com maior aptdão para FrontEnd
+            Desenvolvedor Full Stack com maior aptdão para FrontEnd
           </p>
         </div> 
       </Aside>
 
       <Main>
         <div>
-          <h3>ABOUT ME</h3>
-          <p>Brasileiro, 27 anos</p>
-          <p>Sou graduando em Analise e Desenvolvimmento de Sistemas</p>
-          <p>Front-End Developer</p>
-          <p>Inglês Intermediário : Leitura e Conversas Objetivas</p>
+          <h1>ABOUT ME</h1>
+          <ul>
+            <li>Brasileiro, 27 anos</li>
+            <li>Sou graduando em Analise e Desenvolvimmento de Sistemas</li>
+            <li>Nível de Inglês: Intermediário - Leitura e Conversa</li>
+          </ul>
         </div>
         <div>
-          <h3>MY STAKS</h3>
-          <p>React</p>
-          <p>Typescript</p>
-          <p>JS</p>
-          <p>HTML + CSS</p>
+          <h1>MY STAKS</h1>
+          <ul>
+            <li>React</li>
+            <li>Typescript</li>
+            <li>JS</li>
+            <li>HTML + CSS</li>
+          </ul>
         </div>
         <div>
-          <h3>LINKS</h3>
+          <h1>LINKS</h1>
           <a 
             href="https://www.linkedin.com/in/hugo-souza-42b446133/" 
             target="_blank"

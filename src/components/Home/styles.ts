@@ -13,6 +13,10 @@ export const SectionContainer = styled.section`
     'A B'
     'C C';
   gap: 3rem;
+
+  h1{
+    font-family: "Bebas Neue", sans-serif;
+  }
   
 
   p {
@@ -33,10 +37,30 @@ export const SectionContainer = styled.section`
 
 export const Aside = styled.div`
   grid-area: A;
+  h1 {
+    font-size: 4rem
+  }
+  p{
+    font-family: "Roboto", sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+  }
 `;
 
 export const Main = styled.div`
   grid-area: B;
+  h1{
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem
+  }
+  li{
+    list-style: none;
+    color: ${props => props.theme['paragraph']};
+    font-family: "Roboto", sans-serif;
+    font-size: 1rem;
+
+    margin: 0.3rem 0rem;
+  }
 `;
 
 
