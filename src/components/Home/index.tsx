@@ -1,3 +1,4 @@
+import { GithubLogo, LinkedinLogo } from "phosphor-react";
 import { Aside, Main, SectionContainer } from "./styles";
 
 export function Home(){
@@ -5,11 +6,10 @@ export function Home(){
     <SectionContainer>
       <Aside>
         <h1>Hi, my name is Hugo</h1>
-        <h2>Web Developer</h2>
+        <h1>Web Developer</h1>
         <div>
-          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
-            Delectus quaerat odit in quam fugiat earum! Neque consequuntur eligendi repudiandae quasi. 
-            Vero, omnis.
+          <p>
+            Full stack developer com maior aptdão para FrontEnd
           </p>
         </div> 
       </Aside>
@@ -31,8 +31,20 @@ export function Home(){
         </div>
         <div>
           <h3>LINKS</h3>
-          <a href="">Linked In </a>
-          <a href=""> Github </a>
+          <a 
+            href="https://www.linkedin.com/in/hugo-souza-42b446133/" 
+            target="_blank"
+            title="LinkedIn"
+          >
+            <LinkedinLogo size={32} color="#ffcd2c"/>
+          </a>
+          <a 
+            href="https://github.com/skyrons" 
+            target="_blank"
+            title="Github"
+          >
+            <GithubLogo size={32} color="#ffcd2c"/>
+          </a>
         </div>
       </Main>
     </SectionContainer>
