@@ -1,5 +1,7 @@
 import { GithubLogo, LinkedinLogo } from "phosphor-react";
 import { Aside, Main, SectionContainer } from "./styles";
+import { Cards } from "../Cards";
+
 export function Home(){
   return(
     <SectionContainer>
@@ -49,6 +51,7 @@ export function Home(){
           </a>
         </div>
       </Main>
+      <Cards />
     </SectionContainer>
   );
 }
