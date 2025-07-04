@@ -1,6 +1,39 @@
 import { GithubLogo, LinkedinLogo } from "phosphor-react";
 import { Aside, Main, SectionContainer } from "./styles";
-import { Cards } from "../Cards";
+import { Cards, type CardType } from "../Cards";
+
+const cards: CardType[] = [
+  {
+    id: 1,
+    imgUrl: '/public/images/01-doctorcare.jpg',
+    title: 'DoctorCare',
+    staks: 'Landinpage utilizando JS, HTML e CSS'
+  },
+  {
+    id: 2,
+    imgUrl: '/public/images/02-feed.jpg',
+    title: 'Ignite Feed',
+    staks: 'Landinpage utilizando JS, HTML e CSS'
+  },
+  {
+    id: 3,
+    imgUrl: '/public/images/03-dtmoney.png',
+    title: 'DT Money',
+    staks: 'Landinpage utilizando JS, HTML e CSS'
+  },
+  {
+    id: 4,
+    imgUrl: '/public/images/04-mariojump.jpg',
+    title: 'Mario Jumper',
+    staks: 'Landinpage utilizando JS, HTML e CSS'
+  },
+  {
+    id: 5,
+    imgUrl: '/public/images/05-timer.jpg',
+    title: 'Ignite Timer',
+    staks: 'Landinpage utilizando JS, HTML e CSS'
+  },
+]
 
 export function Home(){
   return(
@@ -51,7 +84,16 @@ export function Home(){
           </a>
         </div>
       </Main>
-      <Cards />
+      <div>
+        {cards.map(card => {
+          return(
+            <Cards 
+              key={card.id}
+              card={card}
+            />
+          )
+        })}
+      </div>
     </SectionContainer>
   );
 }

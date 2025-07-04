@@ -1,17 +1,27 @@
-import DTMoney from "../../assets/dt-money01.png"
 import { CardContainer, CardInfo } from "./styles";
 
-export function Cards(){
+export interface CardType {
+  id: number,
+  imgUrl: string,
+  title: string, 
+  staks: string
+}
+
+interface CardProps{
+  card: CardType
+}
+
+export function Cards({card}: CardProps){
   return (
     <section>
       <CardContainer>
         <a href="">
           <div>
-            <img src={DTMoney} alt="" />
+            <img src={card.imgUrl} alt="" />
           </div>
           <CardInfo>
-            <h1>Title</h1>
-            <p>Staks Que Foram Utilizadas</p>
+            <h1>{card.title}</h1>
+            <p>{card.staks}</p>
           </CardInfo>
         </a>
       </CardContainer>
