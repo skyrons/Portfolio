@@ -1,6 +1,7 @@
-import { GithubLogo, LinkedinLogo } from "phosphor-react";
-import { Aside, Main, SectionContainer } from "./styles";
+import { ArrowCircleLeft, ArrowCircleRight, GithubLogo, LinkedinLogo } from "phosphor-react";
+import { Aside, Button, ButtonsGroup, CardCarousel, Main, SectionContainer } from "./styles";
 import { Cards, type CardType } from "../Cards";
+import { useRef } from "react";
 
 const cards: CardType[] = [
   {
@@ -34,8 +35,19 @@ const cards: CardType[] = [
     staks: 'Landinpage utilizando JS, HTML e CSS'
   },
 ]
-
 export function Home(){
+  const carousel = useRef(null);
+
+  const handleLeftClick = (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault();
+    carousel.current.scrollLeft -= carousel.current.offsetWidth;
+  }
+  
+  const handleRightClick = (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault();
+    carousel.current.scrollLeft += carousel.current.offsetWidth;
+  }
+
   return(
     <SectionContainer>
       <Aside>
@@ -84,7 +96,7 @@ export function Home(){
           </a>
         </div>
       </Main>
-      <div>
+      <CardCarousel ref={carousel}>
         {cards.map(card => {
           return(
             <Cards 
@@ -93,7 +105,16 @@ export function Home(){
             />
           )
         })}
-      </div>
+      </CardCarousel>
+
+      <ButtonsGroup>
+        <Button onClick={handleLeftClick}>
+          <ArrowCircleLeft size={32} color="#5a2716" />
+        </Button>
+        <Button onClick={handleRightClick}>
+          <ArrowCircleRight size={32} color="#5a2716" />
+        </Button>
+      </ButtonsGroup>
     </SectionContainer>
   );
 }

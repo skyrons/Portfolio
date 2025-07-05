@@ -2,20 +2,21 @@ import styled from "styled-components";
 
 export const CardContainer = styled.div`
   background-color: ${props => props.theme['bg-dark']};
-  width: 460px;
-  height: 400px;
+  height: 340px;
+  width: 365px;
 
   padding: 2rem;
   border: 2px solid ${props => props.theme['background']};
   border-radius: 52px;
-
+  transition: border 0.3s;
+  
   &:hover{
     border: 2px solid ${props => props.theme['bg-golden']}
   }
 
   img{
-    height:206px;
-    width: 388px;
+    height:190px;
+    width: 293px;
 
     border-radius: 32px;
   }
@@ -31,7 +32,7 @@ export const CardInfo = styled.div`
   flex-direction: column;
   gap: 1rem;
 
-  margin-top: 1rem;
+  margin-top: 0.5rem;
 
   h1{
     font-size: 1.5rem;

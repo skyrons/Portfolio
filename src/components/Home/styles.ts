@@ -1,4 +1,15 @@
 import styled from "styled-components";
+import {CardContainer} from "../Cards/styles.ts"
+
+
+export const CardCarousel = styled.div`
+  grid-area: C;
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  gap: 0.5rem;
+
+`;
 
 export const SectionContainer = styled.section`
   width: 100%;
@@ -11,7 +22,8 @@ export const SectionContainer = styled.section`
   grid-template-columns: 35.5rem 1fr;
   grid-template-areas:
     'A B'
-    'C C';
+    'C C'
+    'D D';
   gap: 3rem;
 
   h1{
@@ -24,15 +36,47 @@ export const SectionContainer = styled.section`
     color: ${props => props.theme['paragraph']}
   };
 
+  ::-webkit-scrollbar{
+    display: none;
+  }
+
+  @media (max-width: 1120px){
+    ${CardContainer}{
+      height: 340px;
+      width: calc(22.5rem * 1.5);
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    ${CardCarousel}{
+      gap: 1.5rem;
+    }
+  }
+
   @media (max-width: 768px) {
     grid-template-columns: 1fr; /* apenas uma coluna */
     grid-template-areas:
       'A'
       'B'
-      'C'; /* empilha as áreas */
+      'C'
+      'D'; /* empilha as áreas */
     gap: 2rem;
     padding: 2rem 1rem;
-  }
+
+    ${CardContainer}{
+      height: 340px;
+      width: calc(22.5rem * 1.2);
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    ${CardCarousel}{
+      gap: 1.5rem;
+    }
+
+  };
 `;
 
 export const Aside = styled.div`
@@ -63,14 +107,14 @@ export const Main = styled.div`
   }
 `;
 
+export const ButtonsGroup = styled.div`
+  grid-area: D;
+  display: flex;
+  justify-content: center;
+`;
 
-
-  /* h1, h2, h3 {
-    background-image: linear-gradient(
-      to right, 
-      ${props => props.theme['text-primary']},
-      ${props => props.theme['text-secondary']} 
-    );
-    background-clip: text;
-    color: transparent;
-  } */
+export const Button = styled.button`
+  background: transparent;
+  border: none;
+  cursor: pointer;
+`;
