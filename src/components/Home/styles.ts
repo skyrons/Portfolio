@@ -28,12 +28,19 @@ export const SectionContainer = styled.section`
 
   h1{
     font-family: "Bebas Neue", sans-serif;
+    background-image: linear-gradient(
+      to right, 
+      ${props => props.theme['text-primary']} 10%, 
+      ${props => props.theme['text-secondary']} 50%);
+    background-clip: text;
+    color: transparent;
   }
   
 
   p {
     font-size: 0.8rem;
-    color: ${props => props.theme['paragraph']}
+    color: ${props => props.theme['paragraph']};
+    margin-bottom: 0.5rem;
   };
 
   ::-webkit-scrollbar{
@@ -95,7 +102,14 @@ export const Main = styled.div`
   grid-area: B;
   h1{
     font-size: 1.5rem;
-    margin-bottom: 0.5rem
+    margin-bottom: 0.5rem;
+
+    background-image: linear-gradient(
+      to right, 
+      ${props => props.theme['text-primary']} 0%, 
+      ${props => props.theme['text-secondary']} 13%);
+    background-clip: text;
+    color: transparent;
   }
   li{
     list-style: none;
@@ -117,4 +131,10 @@ export const Button = styled.button`
   background: transparent;
   border: none;
   cursor: pointer;
+
+  color: ${props => props.theme['bg-golden']};
+
+  &:hover{
+    filter: brightness(0.8);
+  }
 `;

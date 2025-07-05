@@ -29,12 +29,13 @@ export const CardContainer = styled.div`
 export const CardInfo = styled.div`
   display: flex;
   align-items: center;
+  justify-content: center;
   flex-direction: column;
   gap: 1rem;
 
   margin-top: 0.5rem;
 
-  h1{
+  h3{
     font-size: 1.5rem;
     text-decoration: none;
     font-family: 'Roboto', sans-serif;
@@ -42,5 +43,6 @@ export const CardInfo = styled.div`
   }
   p{
     font-size: 0.8rem;
+    text-align: center;
   }
 `;

@@ -5,6 +5,7 @@ export interface CardType {
   imgUrl: string,
   title: string, 
   staks: string
+  link: string
 }
 
 interface CardProps{
@@ -15,12 +16,12 @@ export function Cards({card}: CardProps){
   return (
     <section>
       <CardContainer>
-        <a href="">
+        <a href={card.link}>
           <div>
             <img src={card.imgUrl} alt="" />
           </div>
           <CardInfo>
-            <h1>{card.title}</h1>
+            <h3>{card.title}</h3>
             <p>{card.staks}</p>
           </CardInfo>
         </a>
