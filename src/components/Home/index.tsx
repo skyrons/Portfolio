@@ -6,7 +6,7 @@ import { useRef } from "react";
 const cards: CardType[] = [
   {
     id: 1,
-    imgUrl: '/public/images/01-doctorcare.jpg',
+    imgUrl: '/images/01-doctorcare.jpg',
     title: 'DoctorCare',
     staks: 'Landinpage dinâmica utilizando JS, HTML e CSS',
     link: 'https://skyrons.github.io/doctorcare/'
