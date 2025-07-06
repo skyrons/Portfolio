@@ -42,16 +42,20 @@ const cards: CardType[] = [
   },
 ]
 export function Home(){
-  const carousel = useRef(null);
+  const carousel = useRef<HTMLDivElement>(null);
 
   const handleLeftClick = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
-    carousel.current.scrollLeft -= carousel.current.offsetWidth;
+    if (carousel.current) {
+      carousel.current.scrollLeft -= carousel.current.offsetWidth;
+    }
   }
   
   const handleRightClick = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
-    carousel.current.scrollLeft += carousel.current.offsetWidth;
+    if (carousel.current) {
+      carousel.current.scrollLeft += carousel.current.offsetWidth;
+    }
   }
 
   return(
