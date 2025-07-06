@@ -16,7 +16,7 @@ export function Cards({card}: CardProps){
   return (
     <section>
       <CardContainer>
-        <a href={card.link}>
+        <a href={card.link} target="_blank">
           <div>
             <img src={card.imgUrl} alt="" />
           </div>

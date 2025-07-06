@@ -14,28 +14,28 @@ const cards: CardType[] = [
   },
   {
     id: 2,
-    imgUrl: '/public/images/02-feed.jpg',
+    imgUrl: '/images/02-feed.jpg',
     title: 'Ignite Feed',
     staks: 'Feed de publcações estáticas e campo de comentário: React + Typescript',
     link: 'https://postfeedts.netlify.app/'
   },
   {
     id: 3,
-    imgUrl: '/public/images/03-dtmoney.png',
+    imgUrl: '/images/03-dtmoney.png',
     title: 'DT Money',
     staks: 'Gerente de transações financeiras: API Restful, React + Typescript + Styled-Components',
     link: 'https://dtmoneyts.netlify.app/'
   },
   {
     id: 4,
-    imgUrl: '/public/images/04-mariojump.jpg',
+    imgUrl: '/images/04-mariojump.jpg',
     title: 'Mario Jumper',
     staks: 'Os movimentos desse jogo são realizados através do DOM, alterando basicamente o CSS',
     link: 'https://skyrons.github.io/Mario-jump/'
   },
   {
     id: 5,
-    imgUrl: '/public/images/05-timer.jpg',
+    imgUrl: '/images/05-timer.jpg',
     title: 'Ignite Timer',
     staks: 'Uma SPA que gerencia o tempo que o usuário determina para trabalhar em uma determinada tarefa: React + Typescript',
     link: 'https://timerignitets.netlify.app/'
