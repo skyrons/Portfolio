@@ -1,7 +1,9 @@
 import { ArrowCircleLeft, ArrowCircleRight, GithubLogo, LinkedinLogo } from "phosphor-react";
 import { Aside, Button, ButtonsGroup, CardCarousel, Main, SectionContainer } from "./styles";
 import { Cards, type CardType } from "../Cards";
-import { useRef } from "react";
+import { useRef, useEffect } from "react";
+
+import sr from '../../utils/scrollreveal'
 
 const cards: CardType[] = [
   {
@@ -42,6 +44,21 @@ const cards: CardType[] = [
   },
 ]
 export function Home(){
+  const homeRef = useRef<HTMLDivElement | null>(null)
+
+  useEffect(() => {
+    if (homeRef.current) {
+      sr.reveal(homeRef.current, {
+        origin: 'bottom',
+        distance: '80px',
+        duration: 1000,
+        delay: 200,
+        easing: 'ease-in-out',
+        reset: false, // se quiser que a animação ocorra só uma vez
+      })
+    }
+  }, [])
+
   const carousel = useRef<HTMLDivElement>(null);
 
   const handleLeftClick = (e: React.MouseEvent<HTMLButtonElement>) => {
@@ -59,8 +76,8 @@ export function Home(){
   }
 
   return(
-    <SectionContainer>
-      <Aside>
+    <SectionContainer >
+      <Aside >
         <h1>Hugo Souza</h1>
         <h1>Web Developer</h1>
         <div>
