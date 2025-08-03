@@ -44,40 +44,66 @@ const cards: CardType[] = [
   },
 ]
 export function Home(){
-  const homeRef = useRef<HTMLDivElement | null>(null)
+  const asideRef = useRef<HTMLDivElement | null>(null)
+  const mainRef = useRef<HTMLDivElement | null>(null)
+  const scrollrevealCarouselRef = useRef<HTMLDivElement | null>(null)
+
+  const carouselRef = useRef<HTMLDivElement>(null);
+
+  const setCombinedRef = (node: HTMLDivElement | null) => {
+    scrollrevealCarouselRef.current = node
+    carouselRef.current = node
+  }
 
   useEffect(() => {
-    if (homeRef.current) {
-      sr.reveal(homeRef.current, {
-        origin: 'bottom',
-        distance: '80px',
-        duration: 1000,
+    if (asideRef.current) {
+      sr.reveal(asideRef.current, {
+        origin: 'left',
+        distance: '20px',
+        duration: 1500,
         delay: 200,
         easing: 'ease-in-out',
-        reset: false, // se quiser que a animação ocorra só uma vez
+        reset: true,
+      })
+    } if (mainRef.current) {
+      sr.reveal(mainRef.current, {
+        scale: 0.5,
+        opacity: 0,
+        duration: 2000,
+        delay: 200,
+        easing: 'ease-in-out',
+        reset: true,
+      })
+    } if (scrollrevealCarouselRef.current) {
+      sr.reveal(scrollrevealCarouselRef.current, {
+        origin: 'bottom',
+        distance: '50px',
+        duration: 2500,
+        delay: 200,
+        easing: 'ease-in-out',
+        reset: true,
       })
     }
   }, [])
 
-  const carousel = useRef<HTMLDivElement>(null);
-
   const handleLeftClick = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
-    if (carousel.current) {
-      carousel.current.scrollLeft -= carousel.current.offsetWidth;
+    if (carouselRef.current) {
+      carouselRef.current.scrollLeft -= carouselRef.current.offsetWidth;
     }
   }
   
   const handleRightClick = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
-    if (carousel.current) {
-      carousel.current.scrollLeft += carousel.current.offsetWidth;
+    if (carouselRef.current) {
+      carouselRef.current.scrollLeft += carouselRef.current.offsetWidth;
     }
   }
 
   return(
     <SectionContainer >
-      <Aside >
+      <Aside 
+        ref={asideRef}>
         <h1>Hugo Souza</h1>
         <h1>Web Developer</h1>
         <div>
@@ -92,7 +118,8 @@ export function Home(){
         </div> 
       </Aside>
 
-      <Main>
+      <Main
+        ref={mainRef}>
         <div>
           <h1>ABOUT ME</h1>
           <ul>
@@ -128,7 +155,7 @@ export function Home(){
           </a>
         </div>
       </Main>
-      <CardCarousel ref={carousel}>
+      <CardCarousel ref={setCombinedRef}>
         {cards.map(card => {
           return(
             <Cards 
